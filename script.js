@@ -7,7 +7,9 @@ boxDrag.addEventListener('mousedown', (event) => {
     const rect = article.getBoundingClientRect();
     
     const onMouseMove = (event) => {
-        article.style.width = `${event.clientX - rect.left}px`;
+        if (event.clientX - rect.left > 300) {
+            article.style.width = `${event.clientX - rect.left}px`;
+        }
     }
     
     const onMouseUp = () => {
