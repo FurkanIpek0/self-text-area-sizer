@@ -1,0 +1,32 @@
+html {
+    font-size: clamp(1rem, 0.75rem + 1.5vw, 2rem);
+}
+body {
+    margin: 0 var(--metric-box-spacing);
+}
+:is(h1,h2,h3,p,li,article) {
+    max-inline-size: initial;
+    margin-block-start: var(--metric-box-spacing);
+}
+
+article {
+    overflow-y: scroll;
+    height: 90vw;
+    width: 400px;
+}
+.box {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.box-drag {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 8px;
+    height: 100%;
+    background: red;
+}
