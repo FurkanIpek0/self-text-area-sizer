@@ -2,6 +2,7 @@ html {
     font-size: clamp(1rem, 0.75rem + 1.5vw, 2rem);
 }
 body {
+    display: flex;
     margin: 0 var(--metric-box-spacing);
 }
 :is(h1,h2,h3,p,li,article) {
