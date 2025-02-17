@@ -1,13 +1,18 @@
 const boxDrag = document.querySelector('#box-drag');
+const article = document.querySelector('#article');
+const rect = article.getBoundingClientRect();
 
+function onMouseMove(event) {
+    article.style.width = `${event.clientX - rect.left}px`;
+    console.log(article.clientX);
+}
+
+function onMouseUp() {
+    document.removeEventListener('mousemove', onMouseMove);
+    document.removeEventListener('mouseup', onMouseUp);
+}
 
 boxDrag.addEventListener('mousedown', (event) => {
-    boxDrag.addEventListener('mousemove', (event2) => {
-        const article = document.querySelector('#article');
-        article.style['width'] = `${event2.clientX}px`;
-    })
-    boxDrag.addEventListener('mouseup', (event3) => {
-        document.removeEventListener('mousemove', onMouseMove);
-        document.removeEventListener('mouseup', onMouseUp);
-    })
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
 });
