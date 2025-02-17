@@ -12,7 +12,7 @@ body {
 
 article {
     overflow-y: scroll;
-    height: 90vw;
+    height: 90vh;
     width: 400px;
 }
 .box {
